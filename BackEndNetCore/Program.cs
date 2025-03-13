@@ -1,4 +1,7 @@
 
+using DataAccess.NetCore.IServices;
+using DataAccess.NetCore.Services;
+
 namespace BackEndNetCore
 {
     public class Program
@@ -13,6 +16,7 @@ namespace BackEndNetCore
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped<IAccountServices, AccountServices>();
 
             var app = builder.Build();
 

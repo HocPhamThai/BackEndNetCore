@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35825.156 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackEndNetCore", "BackEndNetCore\BackEndNetCore.csproj", "{3B47E18E-21EB-44A7-8E09-B38044575ED7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.NetCore", "DataAccess.NetCore\DataAccess.NetCore.csproj", "{A5924956-1A17-4EEF-B559-8EED66824561}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3B47E18E-21EB-44A7-8E09-B38044575ED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B47E18E-21EB-44A7-8E09-B38044575ED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B47E18E-21EB-44A7-8E09-B38044575ED7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5924956-1A17-4EEF-B559-8EED66824561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5924956-1A17-4EEF-B559-8EED66824561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5924956-1A17-4EEF-B559-8EED66824561}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5924956-1A17-4EEF-B559-8EED66824561}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
