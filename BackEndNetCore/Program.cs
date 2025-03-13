@@ -23,6 +23,9 @@ namespace BackEndNetCore
                 app.UseSwaggerUI();
             }
 
+            //app.UseMiddleware<MyCustomMiddleware>();
+            app.UseMyMiddleware();
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
