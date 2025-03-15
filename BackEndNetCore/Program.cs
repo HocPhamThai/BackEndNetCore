@@ -1,6 +1,7 @@
 
 using DataAccess.NetCore.IServices;
 using DataAccess.NetCore.Services;
+using Microsoft.JSInterop;
 
 namespace BackEndNetCore
 {
@@ -17,6 +18,7 @@ namespace BackEndNetCore
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<IAccountServices, AccountServices>();
+            builder.Services.AddScoped<IProductService, ProductService>();
 
             var app = builder.Build();
 
