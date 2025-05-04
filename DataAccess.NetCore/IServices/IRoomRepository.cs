@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.NetCore.IServices
 {
-    public interface IRoomService
+    public interface IRoomRepository
     {
         Task<List<HB_Rooms>> Room_GetAll(Room_GetAllRequestData requestData);
         Task<ReturnData> Room_Insert(Room_InsertRequestData requestData);

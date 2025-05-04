@@ -23,7 +23,8 @@ namespace BackEndNetCore
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<IAccountServices, AccountServices>();
             builder.Services.AddScoped<IProductService, ProductService>();
-            builder.Services.AddScoped<IRoomService, RoomService>();
+            builder.Services.AddScoped<IRoomRepository, RoomRepository>();
+            builder.Services.AddScoped<IRoomGenericRepository, RoomGenericRepository>();
 
             var app = builder.Build();
 

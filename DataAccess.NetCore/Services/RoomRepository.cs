@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace DataAccess.NetCore.Services
 {
-    public class RoomService : IRoomService
+    public class RoomRepository : IRoomRepository
     {
         private readonly ApplicationBEDbContext _context;
-        public RoomService(ApplicationBEDbContext context)
+        public RoomRepository(ApplicationBEDbContext context)
         {
             _context = context;
         }

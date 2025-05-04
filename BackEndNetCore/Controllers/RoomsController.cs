@@ -9,11 +9,13 @@ namespace BackEndNetCore.Controllers
     [ApiController]
     public class RoomsController : ControllerBase
     {
-        private readonly IRoomService _roomService;
+        private readonly IRoomRepository _roomService;
+        private readonly IRoomGenericRepository _roomGenericRepository;
 
-        public RoomsController(IRoomService roomService)
+        public RoomsController(IRoomRepository roomService, IRoomGenericRepository roomGenericRepository)
         {
             _roomService = roomService;
+            _roomGenericRepository = roomGenericRepository;
         }
 
         [HttpPost("GetAll")]
@@ -21,7 +23,8 @@ namespace BackEndNetCore.Controllers
         {
             try
             {
-                var rooms = await _roomService.Room_GetAll(requestData);
+                //var rooms = await _roomService.Room_GetAll(requestData);
+                var rooms = await _roomGenericRepository.GetAll();
                 return Ok(rooms);
             }
             catch (Exception ex)
