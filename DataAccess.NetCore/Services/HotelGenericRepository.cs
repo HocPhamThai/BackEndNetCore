@@ -1,4 +1,5 @@
 ﻿using DataAccess.NetCore.Data;
+using DataAccess.NetCore.DO;
 using DataAccess.NetCore.IServices;
 using System;
 using System.Collections.Generic;
@@ -8,21 +9,13 @@ using System.Threading.Tasks;
 
 namespace DataAccess.NetCore.Services
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class HotelGenericRepository : GenericRepository<HB_Hotels>, IHotelGenericRepository
     {
         private readonly ApplicationBEDbContext _context;
-        public GenericRepository(ApplicationBEDbContext context)
+        public HotelGenericRepository(ApplicationBEDbContext context) : base(context)
         {
             _context = context;
         }
-        public async Task<List<T>> GetAll()
-        {
-            return _context.Set<T>().ToList();
-        }
 
-        public async Task Insert(T entity)
-        {
-            _context.Add(entity);
-        }
     }
 }

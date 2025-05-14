@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess.NetCore.DO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.NetCore.IServices
 {
-    public interface IGenericRepository<T>
+    public interface IHotelGenericRepository : IGenericRepository<HB_Hotels>
     {
-        Task<List<T>> GetAll();
-        Task Insert(T entity);
     }
 }

@@ -2,6 +2,7 @@
 using DataAccess.NetCore.Data;
 using DataAccess.NetCore.IServices;
 using DataAccess.NetCore.Services;
+using DataAccess.NetCore.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.JSInterop;
 
@@ -25,6 +26,8 @@ namespace BackEndNetCore
             builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<IRoomRepository, RoomRepository>();
             builder.Services.AddScoped<IRoomGenericRepository, RoomGenericRepository>();
+            builder.Services.AddScoped<IHotelGenericRepository, HotelGenericRepository>();
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             var app = builder.Build();
 

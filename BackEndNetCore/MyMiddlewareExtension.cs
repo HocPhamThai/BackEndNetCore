@@ -4,7 +4,9 @@
     {
         public static IApplicationBuilder UseMyMiddleware(this IApplicationBuilder builder)
         {
-            return builder.UseMiddleware<MyCustomMiddleware>();
+            builder.UseMiddleware<MyCustomMiddleware>();
+            builder.UseMiddleware<MyCustomMiddleware2>();
+            return builder;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace DataAccess.NetCore.Services
             var list = new List<HB_Rooms>();
             try
             { 
-                list = _context.Room.ToList();
+                list = _context.HB_Rooms.ToList();
                 if (requestData != null)
                 {
                     if (!string.IsNullOrEmpty(requestData.RoomNumber))
@@ -57,7 +57,7 @@ namespace DataAccess.NetCore.Services
                     IsActive = requestData.IsActive
                 };
 
-                _context.Room.Add(req);
+                _context.HB_Rooms.Add(req);
 
                 var rs = _context.SaveChanges();
                 if (rs == 0)
@@ -90,7 +90,7 @@ namespace DataAccess.NetCore.Services
                     returnData.ReturnMessage = "Dữ liệu không hợp lệ";
                     return returnData;
                 }
-                var req = _context.Room.FirstOrDefault(x => x.RoomID == requestData.RoomID);
+                var req = _context.HB_Rooms.FirstOrDefault(x => x.RoomID == requestData.RoomID);
                 if (req == null)
                 {
                     returnData.ReturnCode = -2;
@@ -131,14 +131,14 @@ namespace DataAccess.NetCore.Services
                     returnData.ReturnMessage = "Dữ liệu không hợp lệ";
                     return returnData;
                 }
-                var req = _context.Room.FirstOrDefault(x => x.RoomID == roomId);
+                var req = _context.HB_Rooms.FirstOrDefault(x => x.RoomID == roomId);
                 if (req == null)
                 {
                     returnData.ReturnCode = -2;
                     returnData.ReturnMessage = "Không tìm thấy phòng";
                     return returnData;
                 }
-                _context.Room.Remove(req);
+                _context.HB_Rooms.Remove(req);
                 var rs = _context.SaveChanges();
                 if (rs == 0)
                 {

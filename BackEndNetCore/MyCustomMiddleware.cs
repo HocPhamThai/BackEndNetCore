@@ -10,7 +10,7 @@
 
         public Task Invoke(HttpContext context)
         {
-            context.Response.Headers.Add("Hacker_By", "HocLord");
+            context.Response.Headers.Append("Hacker_By", "HocLord");
             return _next(context);
         }
     }
