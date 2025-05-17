@@ -9,6 +9,7 @@ namespace DataAccess.NetCore.IServices
 {
     public interface IAccountServices
     {
-        Task<ReturnData> AccountLogin(AccountRequestData requestData);
+        Task<LoginResponseData> AccountLogin(AccountRequestData requestData);
+        Task<int> AccountUpdateRefreshToken(AccountUpdateRefreshTokenRequestData requestData);
     }
 }

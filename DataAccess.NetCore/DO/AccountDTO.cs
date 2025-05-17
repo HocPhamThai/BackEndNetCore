@@ -18,4 +18,11 @@ namespace DataAccess.NetCore.DO
         public string? Username { get; set; }
         public string? Password { get; set; }
     }
+
+    public class AccountUpdateRefreshTokenRequestData
+    {
+        public int? UserID { get; set; }
+        public string? RefreshToken { get; set; }
+        public DateTime? Expired { get; set; }
+    }
 }
