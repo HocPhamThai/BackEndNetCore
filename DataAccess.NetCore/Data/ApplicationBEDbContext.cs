@@ -32,5 +32,7 @@ namespace DataAccess.NetCore.Data
         public DbSet<HB_Rooms>? HB_Rooms { get; set; }
         public DbSet<HB_Hotels>? HB_Hotels { get; set; }    
         public DbSet<User>? User { get; set; }
+        public DbSet<Function> Function { get; set; }
+        public DbSet<UserPemission> UserPemission { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using DataAccess.NetCore.DO;
+﻿using BackEndNetCore.Filter;
+using DataAccess.NetCore.DO;
 using DataAccess.NetCore.IServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,6 +20,7 @@ namespace BackEndNetCore.Controllers
         }
 
         [HttpPost("GetAll")]
+        [MyAuthorizeAttribute("Room_GetAll", "VIEW")] 
         public async Task<IActionResult> Room_GetAll([FromBody] Room_GetAllRequestData requestData)
         {
             try

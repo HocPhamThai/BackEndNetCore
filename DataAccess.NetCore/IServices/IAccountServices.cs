@@ -11,5 +11,8 @@ namespace DataAccess.NetCore.IServices
     {
         Task<LoginResponseData> AccountLogin(AccountRequestData requestData);
         Task<int> AccountUpdateRefreshToken(AccountUpdateRefreshTokenRequestData requestData);
+        // for check permission
+        Task<Function> GetFunctionByCode(string code);
+        Task<UserPemission> GetUserPemissionByUserID(int userID, int functionID);
     }
 }

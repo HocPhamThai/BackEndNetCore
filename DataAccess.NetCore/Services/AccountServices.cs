@@ -1,6 +1,7 @@
 ﻿using DataAccess.NetCore.Data;
 using DataAccess.NetCore.DO;
 using DataAccess.NetCore.IServices;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,6 +82,18 @@ namespace DataAccess.NetCore.Services
             {
                 throw;
             }
+        }
+
+        public async Task<Function> GetFunctionByCode(string code)
+        {
+            var data = await _context.Function.FirstOrDefaultAsync(x => x.FunctionCode == code);
+            return data;
+        }
+
+        public async Task<UserPemission> GetUserPemissionByUserID(int userID, int functionID)
+        {
+            var data = await _context.UserPemission.FirstOrDefaultAsync(x => x.UserID == userID && x.FunctionID == functionID);
+            return data;
         }
     }
 }
